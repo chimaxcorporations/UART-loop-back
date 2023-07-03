@@ -1,0 +1,34 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.906077",
+   "Default View_TopLeft":"-66,-36",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_rx -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
+preplace port port-id_tx -pg 1 -lvl 4 -x 920 -y 320 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace port port-id_rst -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace port port-id_tx_done -pg 1 -lvl 4 -x 920 -y 300 -defaultsOSRD
+preplace inst fifo_generator_0 -pg 1 -lvl 3 -x 750 -y 150 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 1 -x 170 -y 340 -defaultsOSRD
+preplace inst uart_rx -pg 1 -lvl 2 -x 460 -y 130 -defaultsOSRD
+preplace inst uart_tx -pg 1 -lvl 2 -x 460 -y 330 -defaultsOSRD
+preplace netloc uart_tx_0_tx 1 2 2 NJ 320 NJ
+preplace netloc clk_0_1 1 0 3 NJ 110 330 220 NJ
+preplace netloc rst_0_1 1 0 3 NJ 130 320 240 NJ
+preplace netloc uart_tx_0_tx_done 1 2 2 590 300 NJ
+preplace netloc uart_rx_0_rx_done 1 2 1 N 120
+preplace netloc uart_rx_0_rx_data 1 2 1 590 100n
+preplace netloc fifo_generator_0_dout 1 1 2 340 50 580J
+preplace netloc fifo_generator_0_empty 1 0 3 20 40 NJ 40 600J
+preplace netloc util_vector_logic_0_Res 1 1 1 NJ 340
+preplace netloc rx_1 1 0 2 NJ 150 N
+levelinfo -pg 1 0 170 460 750 920
+pagesize -pg 1 -db -bbox -sgen -70 -20 1020 420
+"
+}
+{
+   "da_clkrst_cnt":"6"
+}
