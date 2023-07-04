@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Mon Jul  3 16:28:38 2023
+//Date        : Tue Jul  4 16:53:05 2023
 //Host        : ZEL678 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -16,7 +16,7 @@ module design_1
     rx,
     tx,
     tx_done);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN design_1_clk_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN design_1_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst;
   input rx;
   output tx;
@@ -26,7 +26,7 @@ module design_1
   wire [7:0]fifo_generator_0_dout;
   wire fifo_generator_0_empty;
   wire rst_0_1;
-  wire rx_0_1;
+  wire rx_1;
   wire [7:0]uart_rx_0_rx_data;
   wire uart_rx_0_rx_done;
   wire uart_tx_0_tx;
@@ -35,7 +35,7 @@ module design_1
 
   assign clk_0_1 = clk;
   assign rst_0_1 = rst;
-  assign rx_0_1 = rx;
+  assign rx_1 = rx;
   assign tx = uart_tx_0_tx;
   assign tx_done = uart_tx_0_tx_done;
   design_1_fifo_generator_0_0 fifo_generator_0
@@ -46,13 +46,13 @@ module design_1
         .rd_en(uart_tx_0_tx_done),
         .srst(rst_0_1),
         .wr_en(uart_rx_0_rx_done));
-  design_1_uart_rx_0_0 uart_rx_0
+  design_1_uart_rx_0_0 uart_rx
        (.clk(clk_0_1),
         .rst(rst_0_1),
-        .rx(rx_0_1),
+        .rx(rx_1),
         .rx_data(uart_rx_0_rx_data),
         .rx_done(uart_rx_0_rx_done));
-  design_1_uart_tx_0_0 uart_tx_0
+  design_1_uart_tx_0_0 uart_tx
        (.clk(clk_0_1),
         .rst(rst_0_1),
         .tx(uart_tx_0_tx),
